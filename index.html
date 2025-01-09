@@ -1,126 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Butterfly with CSS</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(to bottom, #87CEEB, #B3E5FC);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly with CSS</title>
+    <style>
+        body {
+            background: #234;
+        }
 
-    .butterfly {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      animation: fly 4s infinite ease-in-out;
-    }
+        @keyframes firework {
+            0% {
+                transform: translate(-50%, 60vh);
+                width: 0.5vmin;
+                opacity: 1;
+            }
 
-    /* Wings */
-    .wing {
-      position: absolute;
-      width: 60px;
-      height: 80px;
-      background: radial-gradient(circle, #ff6ec7, #ff1ab3);
-      border-radius: 50%;
-      transform-origin: center top;
-      animation: flap 0.5s infinite ease-in-out;
-    }
+            50% {
+                width: 0.5vmin;
+                opacity: 1;
+            }
 
-    .wing.left {
-      left: -45px;
-      transform: rotateZ(45deg);
-    }
+            100% {
+                width: 45vmin;
+                opacity: 0;
+            }
+        }
 
-    .wing.right {
-      right: -45px;
-      transform: rotateZ(-45deg);
-    }
+        .firework,
+        .firework::before,
+        .firework::after {
+            --top: 60vh;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.5vmin;
+            aspect-ratio: 1;
+            background:
+                /* random backgrounds */
+                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 50% 00%,
+                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 00% 50%,
+                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 50% 99%,
+                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 99% 50%,
+                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 80% 90%,
+                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 95% 90%,
+                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 10% 60%,
+                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 31% 80%,
+                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 80% 10%,
+                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 90% 23%,
+                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 45% 20%,
+                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 13% 24%;
+            background-size: 0.5vmin 0.5vmin;
+            background-repeat: no-repeat;
+            animation: firework 2s infinite;
+        }
 
-    /* Body */
-    .body {
-      position: absolute;
-      width: 15px;
-      height: 50px;
-      background: #6b4226;
-      border-radius: 50px;
-      left: 50%;
-      top: 25%;
-      transform: translateX(-50%);
-    }
+        .firework::before {
+            transform: translate(-50%, -50%) rotate(25deg) !important;
+        }
 
-    /* Antennas */
-    .antenna {
-      position: absolute;
-      width: 3px;
-      height: 20px;
-      background: #6b4226;
-      border-radius: 3px;
-      top: 0;
-    }
-
-    .antenna.left {
-      left: 15%;
-      transform: rotate(-30deg);
-    }
-
-    .antenna.right {
-      right: 15%;
-      transform: rotate(30deg);
-    }
-
-    /* Keyframes for flapping wings */
-    @keyframes flap {
-      0%, 100% {
-        transform: rotateZ(45deg);
-      }
-      50% {
-        transform: rotateZ(20deg);
-      }
-    }
-
-    @keyframes flap-right {
-      0%, 100% {
-        transform: rotateZ(-45deg);
-      }
-      50% {
-        transform: rotateZ(-20deg);
-      }
-    }
-
-    /* Flying animation */
-    @keyframes fly {
-      0% {
-        transform: translate(-20px, 20px) rotate(0deg);
-      }
-      25% {
-        transform: translate(20px, -50px) rotate(10deg);
-      }
-      50% {
-        transform: translate(0, 20px) rotate(-10deg);
-      }
-      75% {
-        transform: translate(-20px, -50px) rotate(5deg);
-      }
-      100% {
-        transform: translate(-20px, 20px) rotate(0deg);
-      }
-    }
-  </style>
+        .firework::after {
+            transform: translate(-50%, -50%) rotate(-37deg) !important;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="butterfly">
-    <div class="wing left"></div>
-    <div class="wing right"></div>
-    <div class="body"></div>
-    <div class="antenna left"></div>
-    <div class="antenna right"></div>
-  </div>
+    <div class="firework">
+    </div>
+
 </body>
+
 </html>
