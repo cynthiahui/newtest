@@ -1,77 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butterfly with CSS</title>
+    <title>Insights Page</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
+
+/* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a192f;
+            color: white;
+        } */
+
+        .chat-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            overflow-y: auto;
+        }
+
+        .message {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #1b76d3;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .bot-message {
+            background: #112240;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        /* .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #02111d;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-box {
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .chat-icon {
+            font-size: 24px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+        } */
+
+        
         body {
-            background: #234;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, #011627, #064663);
+            color: white;
+            text-align: center;
         }
 
-        @keyframes firework {
-            0% {
-                transform: translate(-50%, 60vh);
-                width: 0.5vmin;
-                opacity: 1;
-            }
-
-            50% {
-                width: 0.5vmin;
-                opacity: 1;
-            }
-
-            100% {
-                width: 45vmin;
-                opacity: 0;
-            }
+        /* Background with sunrise */
+        .background {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(to top, #022b3a, #1b4965);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .firework,
-        .firework::before,
-        .firework::after {
-            --top: 60vh;
-            content: "";
+        .sun {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0.5vmin;
-            aspect-ratio: 1;
-            background:
-                /* random backgrounds */
-                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 50% 00%,
-                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 00% 50%,
-                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 50% 99%,
-                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 99% 50%,
-                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 80% 90%,
-                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 95% 90%,
-                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 10% 60%,
-                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 31% 80%,
-                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 80% 10%,
-                radial-gradient(circle, #ff0 0.2vmin, #0000 0) 90% 23%,
-                radial-gradient(circle, #ff0 0.3vmin, #0000 0) 45% 20%,
-                radial-gradient(circle, #ff0 0.5vmin, #0000 0) 13% 24%;
-            background-size: 0.5vmin 0.5vmin;
-            background-repeat: no-repeat;
-            animation: firework 2s infinite;
+            bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
         }
 
-        .firework::before {
-            transform: translate(-50%, -50%) rotate(25deg) !important;
+        .hills {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background: radial-gradient(circle, #011627, #02111d);
+            border-top-left-radius: 50% 40px;
+            border-top-right-radius: 50% 40px;
         }
 
-        .firework::after {
-            transform: translate(-50%, -50%) rotate(-37deg) !important;
+        .header {
+            padding: 20px;
+            font-size: 24px;
+            margin-top: -20px;
         }
+
+        .insights-container {
+            max-width: 400px;
+            margin: auto;
+            background: #0a192f;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .insight-card {
+            background: #112240;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .insight-icon {
+            font-size: 20px;
+            color: #1b76d3;
+            margin-right: 10px;
+        }
+
+        .insight-text {
+            flex: 1;
+        }
+
+        .insight-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .insight-description {
+            font-size: 14px;
+            color: #d3d3d3;
+        }
+
+        .view-btn {
+            background: #1b76d3;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #02111d;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-box {
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .chat-icon {
+            font-size: 24px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
-
 <body>
-    <div class="firework">
+
+    <!-- Background with sunrise -->
+    <div class="background">
+        <div class="sun"></div>
+        <div class="hills"></div>
     </div>
 
-</body>
+    <div class="header">
+        <h2>Good Morning</h2>
+        <p>I have new insights to share with you.</p>
+    </div>
 
+    <div class="insights-container">
+        <div class="insight-card">
+            <i class="fas fa-wallet insight-icon"></i>
+            <div class="insight-text">
+                <div class="insight-title">Spend Path</div>
+                <div class="insight-description">See your current monthly spending.</div>
+            </div>
+            <a href="#" class="view-btn">VIEW</a>
+        </div>
+
+        <div class="insight-card">
+            <i class="fas fa-sync-alt insight-icon"></i>
+            <div class="insight-text">
+                <div class="insight-title">Subscriptions & Recurring Charges</div>
+                <div class="insight-description">You're trending to spend $240.00 this year. See how it all adds up.</div>
+            </div>
+            <a href="#" class="view-btn">VIEW</a>
+        </div>
+
+        <div class="insight-card">
+            <i class="fas fa-piggy-bank insight-icon"></i>
+            <div class="insight-text">
+                <div class="insight-title">Deposit Update</div>
+                <div class="insight-description">See how much is available.</div>
+            </div>
+            <a href="#" class="view-btn">VIEW</a>
+        </div>
+
+        <div class="insight-card">
+            <i class="fas fa-tags insight-icon"></i>
+            <div class="insight-text">
+                <div class="insight-title">BankAmeriDeals Reminder</div>
+                <div class="insight-description">These sweet deals expire soon ⏳</div>
+            </div>
+            <a href="#" class="view-btn">VIEW</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <input type="text" class="input-box" placeholder="Type or ask me something">
+        <i class="fas fa-microphone chat-icon"></i>
+    </div>
+
+    <div class="chat-container">
+        <div class="message user-message">What is my spending summary last month?</div>
+        
+        <div class="message bot-message">
+            Here is your spending summary for last month:  
+            <ul>
+                <li>🏠 Rent: **$1200**</li>
+                <li>🛒 Groceries: **$450**</li>
+                <li>🚗 Transportation: **$200**</li>
+                <li>🍽 Dining: **$300**</li>
+                <li>🎉 Entertainment: **$150**</li>
+                <li>💡 Utilities: **$180**</li>
+                <li>💳 Subscriptions: **$50**</li>
+            </ul>
+            **Total Spending:** **$2530**
+        </div>
+    </div>
+</body>
 </html>
