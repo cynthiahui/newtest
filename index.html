@@ -4,235 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Account Page</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Stock Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 20px;
             padding: 0;
-            background-color: #f9f9f9;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background: white;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .top-menu {
-            text-align: right;
-            font-size: 16px;
-            font-weight: bold;
-
-            .level {
-                color: #0e71e2;
-            }
-
-            .balance {
-                color: #ff8800;
-            }
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background: white;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666;
-            font-weight: bold;
-            padding: 10px;
-        }
-
-        nav a.active {
-            color: red;
-            border-bottom: 2px solid red;
-        }
-
-        .chart {
-            background: white;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-
-        .graph {
-            background: linear-gradient(to top, #fff, #007bff);
-            height: 150px;
-            border-radius: 5px;
-        }
-
-        .availability {
-            background: white;
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .details p {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-            font-size: 16px;
-        }
-
-        .transfer-btn {
-            display: block;
-            width: 90%;
-            margin: 20px auto;
-            padding: 15px;
-            background: navy;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-around;
-            background: white;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
+        table {
             width: 100%;
-            border-top: 1px solid #ddd;
+            border-collapse: collapse;
         }
 
-        footer a {
-            text-decoration: none;
-            color: #666;
-            font-size: 14px;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-
-        header {
-            padding: 15px;
-            color: white;
-            font-size: 20px;
-        }
-
-        .chart-container {
-            width: 90%;
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            margin-top: 20px;
+        th,
+        td {
             padding: 10px;
-            background: navy;
-            color: white;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .stock-header {
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .symbol {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h2>Welcome, Test</h2>
-        <div class="top-menu">
-            <div class="level">KidsVest Level 1</div>
-            <div class="balance">Balance: 500</div>
-        </div>
-    </header>
-
-    <nav>
-        <a href="#" class="active">Dashboard</a>
-        <a href="#">Trade</a>
-        <a href="#">Activity</a>
-        <a href="#">Achivements</a>
-    </nav>
-
-    <section class="chart">
-        <h3>HISTORICAL TOTAL VALUE</h3>
-        <p>from Feb 2024 to Jan 2025</p>
-        <div class="graph"></div>
-    </section>
-
-    <section class="availability">
-        <h3>Availability Details</h3>
-        <div class="details">
-            <p>Cash Available to Invest <span>$12,138.59</span></p>
-            <p>Settled Cash Buying Power <span>$12,138.59</span></p>
-            <p>Unsettled Cash <span>$0.00</span></p>
-            <p>Cash Available to Withdraw <span>$12,138.59</span></p>
-        </div>
-    </section>
-
-    <button class="transfer-btn">
-    </button>
-
-    <header>
-        <h2>Stock Prices</h2>
-    </header>
-
-    <section class="chart-container">
-        <canvas id="stockChart"></canvas>
-    </section>
-
-    <footer>
-        <p>Live Stock Market Data</p>
-    </footer>
+    <h2>Stocks & Related</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Security</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#" class="symbol">AMD</a><br>ADVANCED MICRO DEVICES INC</td>
+                <td>5</td>
+                <td>$114.17</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">AFRM</a><br>AFFIRM HOLDINGS INC</td>
+                <td>15</td>
+                <td>$74.61</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">AAL</a><br>AMERICAN AIRLINES GROUP INC</td>
+                <td>100</td>
+                <td>$15.86</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">BAC</a><br>BANK OF AMERICA CORP</td>
+                <td>70</td>
+                <td>$45.30</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">BB</a><br>BLACKBERRY LTD</td>
+                <td>10</td>
+                <td>$5.58</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">BA</a><br>BOEING COMPANY</td>
+                <td>10</td>
+                <td>$180.88</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">FFIE</a><br>FARADAY FUTURE</td>
+                <td>501</td>
+                <td>$1.66</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">48213W408</a><br>JUST ENERGY GROUP INC</td>
+                <td>50</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td><a href="#" class="symbol">NTGR</a><br>NETGEAR INC</td>
+                <td>70</td>
+                <td>$27.03</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
-<script>
-    const ctx = document.getElementById('stockChart').getContext('2d');
-
-    const stockChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            datasets: [
-                {
-                    label: 'Stock A',
-                    data: [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170],
-                    borderColor: 'red',
-                    fill: false
-                },
-                {
-                    label: 'Stock B',
-                    data: [90, 85, 95, 100, 105, 110, 108, 115, 120, 125, 130, 140],
-                    borderColor: 'blue',
-                    fill: false
-                },
-                {
-                    label: 'Stock C',
-                    data: [50, 55, 60, 70, 65, 80, 75, 85, 90, 100, 110, 120],
-                    borderColor: 'green',
-                    fill: false
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
-        }
-    });
-
-</script>
 
 </html>
