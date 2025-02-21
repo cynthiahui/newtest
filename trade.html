@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Investment Trading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .etf {
+            /* padding: 10px; */
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .etf:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .trade-button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .details {
+            display: none;
+            padding: 5px;
+            background: #e9e9e9;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .detail {
+            padding: 0 0 10px;
+        }
+
+        .toggle-button {
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .desc {
+            padding-top: 3px;
+            color: #656565;
+            font-size: 14px;
+            font-weight: 100;
+        }
+    </style>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Trade Your Favorite ETFs!</h2>
+
+        <div class="etf">
+            <h3>Magic Money Fund (MMF)<div class="desc">Invest in the magic of fun with top toy and entertainment
+                    brands!</div>
+            </h3>
+            <button class="trade-button">Trade Now</button>
+        </div>
+
+        <div class="detail">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-mmf')">View Stocks & Bonds</a>
+            <div class="details" id="details-mmf">
+                <p><strong>Stocks:</strong> 70% (Disney, Mattel, Hasbro)</p>
+                <p><strong>Bonds:</strong> 30% (US Treasury Bonds, Corporate Bonds)</p>
+            </div>
+        </div>
+
+        <div class="etf">
+            <h3>Future Tech Fund (FTK)<div class="desc">Be part of the future with the biggest tech and gaming
+                    companies!</div>
+            </h3>
+            <button class="trade-button">Trade Now</button>
+        </div>
+
+        <div class="detail">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-ftk')">View Stocks & Bonds</a>
+            <div class="details" id="details-ftk">
+                <p><strong>Stocks:</strong> 75% (Apple, Microsoft, Nintendo)</p>
+                <p><strong>Bonds:</strong> 25% (Government Bonds, Tech Corporate Bonds)</p>
+            </div>
+        </div>
+
+        <div class="etf">
+            <h3>Snack Attack Fund (YUMM)<div class="desc">Own the brands behind your favorite snacks and drinks!</div>
+            </h3>
+            <button class="trade-button">Trade Now</button>
+        </div>
+
+        <div class="detail">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-yumm')">View Stocks & Bonds</a>
+            <div class="details" id="details-yumm">
+                <p><strong>Stocks:</strong> 65% (Coca-Cola, McDonald's, Hershey's)</p>
+                <p><strong>Bonds:</strong> 35% (Food Industry Bonds, Municipal Bonds)</p>
+            </div>
+        </div>
+        <div class="etf">
+            <h3>Cool Kicks Fund (KIX)<div class="desc">Step into the future with the trendiest fashion brands!</div>
+            </h3>
+            <button class="trade-button">Trade Now</button>
+        </div>
+
+        <div class="detail">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-kix')">View Stocks & Bonds</a>
+            <div class="details" id="details-kix">
+                <p><strong>Stocks:</strong> 60% (Nike, Adidas, Puma)</p>
+                <p><strong>Bonds:</strong> 40% (Retail Corporate Bonds, Government Bonds)</p>
+            </div>
+        </div>
+
+        <div class="etf">
+            <h3>Adventure Park Fund (RIDE)
+                <div class="desc">Own a piece of your favorite theme parks and attractions!</div>
+            </h3>
+            <button class="trade-button">Trade Now</button>
+        </div>
+        <div class="detail">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-ride')">View Stocks & Bonds</a>
+            <div class="details" id="details-ride">
+                <p><strong>Stocks:</strong> 80% (Disney, Six Flags, Cedar Fair)</p>
+                <p><strong>Bonds:</strong> 20% (Amusement Park Bonds, Municipal Bonds)</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
