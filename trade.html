@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Kids Investment Trading</title>
     <style>
         body {
@@ -60,7 +61,8 @@
             margin-top: 5px;
         }
 
-        .detail {
+        .detail,
+        .history {
             padding: 0 0 10px;
         }
 
@@ -79,6 +81,16 @@
             color: #656565;
             font-size: 14px;
             font-weight: 100;
+        }
+
+        .chart-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
     <script>
@@ -107,6 +119,13 @@
                 <p><strong>Bonds:</strong> 30% (US Treasury Bonds, Corporate Bonds)</p>
             </div>
         </div>
+        <div class="history">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-mmf-history')">View History Price</a>
+            <div class="details chart-container" id="details-mmf-history">
+                <canvas id="details-mmf-history-chart"></canvas>
+            </div>
+        </div>
+
 
         <div class="etf">
             <h3>Future Tech Fund (FTK)<div class="desc">Be part of the future with the biggest tech and gaming
@@ -118,8 +137,16 @@
         <div class="detail">
             <a href="#" class="toggle-button" onclick="toggleDetails('details-ftk')">View Stocks & Bonds</a>
             <div class="details" id="details-ftk">
+
                 <p><strong>Stocks:</strong> 75% (Apple, Microsoft, Nintendo)</p>
                 <p><strong>Bonds:</strong> 25% (Government Bonds, Tech Corporate Bonds)</p>
+
+            </div>
+        </div>
+        <div class="history">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-ftk-history')">View History Price</a>
+            <div class="details  chart-container" id="details-ftk-history">
+                <canvas id="details-ftk-history-chart"></canvas>
             </div>
         </div>
 
@@ -128,12 +155,17 @@
             </h3>
             <button class="trade-button">Trade Now</button>
         </div>
-
         <div class="detail">
             <a href="#" class="toggle-button" onclick="toggleDetails('details-yumm')">View Stocks & Bonds</a>
             <div class="details" id="details-yumm">
                 <p><strong>Stocks:</strong> 65% (Coca-Cola, McDonald's, Hershey's)</p>
                 <p><strong>Bonds:</strong> 35% (Food Industry Bonds, Municipal Bonds)</p>
+            </div>
+        </div>
+        <div class="history">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-yumm-history')">View History Price</a>
+            <div class="details chart-container" id="details-yumm-history">
+                <canvas id="details-yumm-history-chart"></canvas>
             </div>
         </div>
         <div class="etf">
@@ -150,6 +182,13 @@
             </div>
         </div>
 
+        <div class="history">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-kix-history')">View History Price</a>
+            <div class="details chart-container" id="details-kix-history">
+                <canvas id="details-kix-history-chart"></canvas>
+            </div>
+        </div>
+
         <div class="etf">
             <h3>Adventure Park Fund (RIDE)
                 <div class="desc">Own a piece of your favorite theme parks and attractions!</div>
@@ -163,7 +202,51 @@
                 <p><strong>Bonds:</strong> 20% (Amusement Park Bonds, Municipal Bonds)</p>
             </div>
         </div>
+
+        <div class="history">
+            <a href="#" class="toggle-button" onclick="toggleDetails('details-ride-history')">View History Price</a>
+            <div class="details chart-container" id="details-ride-history">
+                <canvas id="details-ride-history-chart"></canvas>
+            </div>
+        </div>
     </div>
 </body>
+
+<script>
+
+    function genChart(chartId, label, data) {
+        const ctx = document.getElementById(chartId).getContext('2d');
+
+        const stockChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label,
+                        data,
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    }
+    genChart('details-mmf-history-chart', 'MMF', [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170]);
+    genChart('details-ftk-history-chart', 'FTK', [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170]);
+    genChart('details-yumm-history-chart', 'YUMM', [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170]);
+    genChart('details-kix-history-chart', 'KIX', [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170]);
+    genChart('details-ride-history-chart', 'RIDE', [100, 120, 110, 130, 125, 140, 135, 150, 145, 155, 160, 170]);
+
+</script>
 
 </html>
