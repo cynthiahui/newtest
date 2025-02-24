@@ -1,105 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Portfolio</title>
+    <title>Congratulations!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
             padding: 0;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        h1 {
+            color: #28a745;
         }
-
-        th {
-            background-color: #f4f4f4;
+        p {
+            font-size: 18px;
+            color: #333;
         }
-
-        .stock-header {
-            font-weight: bold;
-            padding-top: 10px;
-            padding-bottom: 5px;
+        .celebrate {
+            font-size: 50px;
+            margin: 20px 0;
         }
-
-        .symbol {
-            color: blue;
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
-
 <body>
-    <h2>Stocks & Related</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Security</th>
-                <th>Quantity</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="#" class="symbol">AMD</a><br>ADVANCED MICRO DEVICES INC</td>
-                <td>5</td>
-                <td>$114.17</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">AFRM</a><br>AFFIRM HOLDINGS INC</td>
-                <td>15</td>
-                <td>$74.61</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">AAL</a><br>AMERICAN AIRLINES GROUP INC</td>
-                <td>100</td>
-                <td>$15.86</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">BAC</a><br>BANK OF AMERICA CORP</td>
-                <td>70</td>
-                <td>$45.30</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">BB</a><br>BLACKBERRY LTD</td>
-                <td>10</td>
-                <td>$5.58</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">BA</a><br>BOEING COMPANY</td>
-                <td>10</td>
-                <td>$180.88</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">FFIE</a><br>FARADAY FUTURE</td>
-                <td>501</td>
-                <td>$1.66</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">48213W408</a><br>JUST ENERGY GROUP INC</td>
-                <td>50</td>
-                <td>$0.00</td>
-            </tr>
-            <tr>
-                <td><a href="#" class="symbol">NTGR</a><br>NETGEAR INC</td>
-                <td>70</td>
-                <td>$27.03</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>🎉 Congratulations! 🎉</h1>
+        <p class="celebrate">🏆</p>
+        <p>You've just completed your first trade! You're on your way to becoming a great investor. Keep going and have fun growing your portfolio!</p>
+        <a href="index.html" class="button">Go Back to Trading</a>
+    </div>
 </body>
-
 </html>
