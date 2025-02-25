@@ -3,73 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Types for Kids</title>
+    <title>Congratulations!</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #ffebcd;
+            font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: #fff8dc;
+
+        .congrats-box {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 3px solid #ff4500;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
-        h2 {
-            color: #ff4500;
+
+        h1 {
+            color: #ff9800;
         }
-        .investment {
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-            background: #ffdab9;
-            text-align: left;
-            border: 2px dashed #ff6347;
-        }
-        strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #008b8b;
-            font-size: 18px;
-        }
+
         p {
-            color: #555;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .level-up {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d2691e;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: fall 2s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) translateX(0); }
+            100% { transform: translateY(100vh) translateX(20px); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Investment Types for Kids</h2>
-        <div class="investment">
-            <strong>Stocks</strong>
-            <p><strong>What it is:</strong> Imagine owning a tiny piece of your favorite toy company! If it does well, your piece becomes more valuable.</p>
-            <p><strong>Risk:</strong> High (it can go up and down a lot!).</p>
-            <p><strong>Potential Return:</strong> High (if the company becomes super successful!).</p>
-        </div>
-        <div class="investment">
-            <strong>Bonds</strong>
-            <p><strong>What it is:</strong> It’s like lending your allowance to a friend who promises to give it back with a little extra.</p>
-            <p><strong>Risk:</strong> Low (since they promise to pay you back).</p>
-            <p><strong>Potential Return:</strong> Low (but safe and steady!).</p>
-        </div>
-        <div class="investment">
-            <strong>Mutual Funds</strong>
-            <p><strong>What it is:</strong> Imagine putting your money together with your friends to buy different toys so no one loses everything if one toy breaks.</p>
-            <p><strong>Risk:</strong> Medium (since it’s a mix of safe and risky things).</p>
-            <p><strong>Potential Return:</strong> Medium (a good balance!).</p>
-        </div>
-        <div class="investment">
-            <strong>ETFs (Exchange-Traded Funds)</strong>
-            <p><strong>What it is:</strong> It’s like a basket of different toys that you can trade at any time, just like trading cards!</p>
-            <p><strong>Risk:</strong> Medium (because it holds many things).</p>
-            <p><strong>Potential Return:</strong> Medium (since it's well balanced).</p>
-        </div>
+
+    <div class="congrats-box">
+        <h1>🎉 Congratulations! 🎉</h1>
+        <p>You just sold your first ETFs! 🚀</p>
+        <p class="level-up">You've leveled up to **Bronze Level 1**! 🏅</p>
+        <button class="btn" onclick="nextStep()">Continue</button>
     </div>
+
+    <script>
+        function nextStep() {
+            alert("Great job! Keep trading to level up further! 🚀");
+            // You can redirect the user to the next page here
+        }
+
+        // Confetti Effect
+        function createConfetti() {
+            for (let i = 0; i < 30; i++) {
+                let confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.backgroundColor = 
+                    ["#ff0000", "#ff9800", "#ffd700", "#008000", "#0000ff", "#4b0082"][Math.floor(Math.random() * 6)];
+                confetti.style.animationDuration = Math.random() * 2 + 1 + "s";
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 2000);
+            }
+        }
+
+        createConfetti();
+    </script>
+
 </body>
 </html>
