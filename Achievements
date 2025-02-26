@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Achievements & Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff9800;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 20px;
+            width: 60%; /* Adjust based on progress */
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            border-radius: 10px;
+        }
+
+        .achievements {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .achievement {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievement.locked {
+            background: #e0e0e0;
+            color: gray;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏆 My Achievements</h1>
+
+        <h2>🌟 Level Progress</h2>
+        <p>Current Level: <strong>3</strong></p>
+
+        <div class="progress-bar">
+            <div class="progress" style="width: 60%;">60%</div>
+        </div>
+
+        <p>Next Goal: Earn 500 more coins! 💰</p>
+
+        <h2>🏅 Achievements</h2>
+
+        <div class="achievements">
+            <div class="achievement">
+                <span class="icon">✅</span> Beginner Investor – Completed your first investment!
+            </div>
+
+            <div class="achievement">
+                <span class="icon">✅</span> Smart Saver – Saved 500 coins in your virtual bank!
+            </div>
+
+            <div class="achievement">
+                <span class="icon">✅</span> Risk Taker – Invested in a high-risk stock!
+            </div>
+
+            <div class="achievement locked">
+                <span class="icon">🔒</span> Future Millionaire – Earn $10,000 in total!
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
